@@ -60,3 +60,6 @@ docs/api/
 
 # DotEnv
 .env
+
+ # IDE
+ /.vscode
