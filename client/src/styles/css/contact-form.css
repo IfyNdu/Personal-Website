@@ -1,0 +1,28 @@
+.ContactMe__container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center; }
+
+.form__input-container {
+  width: 100%;
+  margin: 0 0 1rem; }
+
+.Contact__name-input, .Contact__email-input, .Contact__body-text-area {
+  border: none;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  background: transparent;
+  color: white;
+  border: 1px solid white; }
+  .Contact__name-input::placeholder, .Contact__email-input::placeholder, .Contact__body-text-area::placeholder {
+    color: white;
+    opacity: 1;
+    /* Firefox */ }
+
+.ContactMe__submit-button {
+  padding: 1rem 2.5rem;
+  letter-spacing: 0.2rem;
+  color: white;
+  border-color: #159f94;
+  background-color: #159f94; }

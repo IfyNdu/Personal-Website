@@ -1,0 +1,52 @@
+$color-black-light: lighten(black, 30%);
+$color-blue-light: lighten(blue, 20%);
+$color-red-light: lighten(red, 20%);
+$color-teal-light: lighten(#094540, 20%);
+
+$mobile: 425px;
+$tablet: 768px;
+$desktop: 1024px;
+$desktop-large: 1600px;
+
+$aspetRatio16-9: 56.25%;
+$aspetRatio4-3: 75%;
+
+//scaling perfect fourth
+//https://type-scale.com/
+
+$font-xxl: 3.998rem;
+$font-xl: 2.827rem;
+$font-l: 1.999rem;
+$font-m: 1.414rem;
+$font-s: 1rem;
+$font-xs: 0.707rem;
+
+h1 {font-size: $font-xxl }
+h2 {font-size: $font-xl }
+h3 {font-size: $font-l }
+h4 {font-size: $font-m }
+p {font-size: $font-s }
+p.xs {font-size: $font-xs }
+label {font-size: 1rem;}
+button {font-size: 1rem;}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: $tablet)  {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (max-width: $desktop)  {
+        @content;
+    }
+}
+@mixin largeDesktop {
+    @media (max-width: $desktop-large)  {
+        @content;
+    }
+}

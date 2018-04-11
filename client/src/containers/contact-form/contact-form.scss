@@ -1,0 +1,58 @@
+.ContactMe__container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+.form__input-container {
+    width: 100%;
+    margin: 0 0 1rem;
+}
+.form__input-validation {
+    color: $color-red-light;
+    text-align: left;
+    margin: 0 0 1rem 0;
+    width: 100%;
+}
+.Contact__name-input, .Contact__email-input, .Contact__body-text-area {
+    border: none;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+
+    &::placeholder {
+        color: white;
+        opacity: 1; /* Firefox */
+    }
+
+}
+.Contact__body-text-area {
+    height: 25vh;
+}
+.ContactMe__submit-button {
+    padding: 1rem 2.5rem;
+    letter-spacing: 0.1rem;
+    color: white;
+    outline: none;
+    border: none;
+    background: linear-gradient(45deg, $color-blue-light,$color-teal-light, lighten(yellow, 20%));
+    //box-shadow: 0.1rem 0.1rem 0.1rem lightcoral;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-size: 400% 400%;
+
+    &.--disabled {
+        background: grey;
+    }
+    &:hover {
+        animation: gradient 4s ease-in-out infinite;
+        //box-shadow: 0.05rem 0.05rem 0.4rem lightcoral;
+    }
+}
+@keyframes gradient {
+    50% {
+      background-position: 100% 0;
+    }
+}  

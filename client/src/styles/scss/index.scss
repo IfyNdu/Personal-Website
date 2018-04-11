@@ -1,0 +1,25 @@
+@import '../globals/globals';
+
+* {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    //font-family: 'Libre Baskerville', serif;
+    //font-family: 'Playfair Display',serif;
+    //font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.45;
+  }
+
+  //Components
+
+  @import '../../containers/navbar/navbar';
+  @import '../../containers/body/body';
+  @import '../../containers/overlay/overlay.scss';
+  @import '../../containers/notification/notification';
+  @import '../../containers/contact-form/contact-form';
+  
