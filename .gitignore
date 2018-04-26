@@ -4,7 +4,7 @@
 /coverage
 
 # production
-/build
+/client/build
 
 # misc
 .DS_Store
@@ -41,7 +41,8 @@ Thumbs.db
 tags
 
 # NPM packages folder.
-node_modules/
+/client/node_modules/
+/server/node_modules/
 
 # Brunch folder for temporary files.
 tmp/
