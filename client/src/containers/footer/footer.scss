@@ -1,0 +1,9 @@
+.Footer__container {
+    background: $color-black-lighter;
+    text-align: center;
+}
+.Footer__copyright {
+    display: inline-block;
+    margin: 4rem auto;
+    color: darken(white, 60%);
+}

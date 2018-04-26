@@ -9,6 +9,7 @@ import { apiDomain } from '../../config'
 
 // API
 import * as API from './contact-form.api'
+import { sendMail } from '../../services/email-service'
 
 // redux
 import store from '../../store'
@@ -38,20 +39,22 @@ class ContactMeFrom extends Component {
         let value = e.target.value;
         let name = e.target.name;
         let fieldIsValid = this.state.model[name].validator(value);
-
+        
         this.setState({
             isValid: fieldIsValid,
             formValid: formReady(model, this.state.fields),
             fields: Object.assign(this.state.fields, { [name]: value })
-        }, () => {
-            console.log(this.state.formValid);
         });
 
     }
+
     submitForm = () => {
-        API.sendMeAn(this.state.fields)
-            .then(result => {
-            }).catch(error => console.log(error));
+
+        sendMail(this.state.fields)
+            .then(response => {
+                store.dispatch(setEmailStatus(response.delivered));
+            })
+            .catch(error => console.log(error))
     }
 
     render() {

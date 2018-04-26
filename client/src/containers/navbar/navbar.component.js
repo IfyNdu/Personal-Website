@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom'
 
 import NavLink from './sub-components/nav-link';
 import Hamburger from './sub-components/hamburger';
@@ -24,11 +23,6 @@ class NavigationBar extends Component {
     }
     toggleMenu = () => {
         store.dispatch(setSideMenuStatus(!this.props.isMenuOpen));
-        // this.setState({
-        //     animateBars: !this.state.animateBars
-        // }, () => {
-        //     store.dispatch(setSideMenuStatus(!this.props.isMenuOpen));
-        // });
     }
 
     render() {

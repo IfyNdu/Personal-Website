@@ -12,16 +12,20 @@
     text-align: left;
     margin: 0 0 1rem 0;
     width: 100%;
+
+    @include tablet {
+        font-size: $font-ms;
+    }
 }
 .Contact__name-input, .Contact__email-input, .Contact__body-text-area {
     border: none;
     width: 100%;
     padding: 1rem;
-    font-size: 1.2rem;
     background: transparent;
     color: white;
     border: 1px solid white;
-
+    font-weight: 300;
+    
     &::placeholder {
         color: white;
         opacity: 1; /* Firefox */
@@ -29,7 +33,7 @@
 
 }
 .Contact__body-text-area {
-    height: 25vh;
+    height: 300px;
 }
 .ContactMe__submit-button {
     padding: 1rem 2.5rem;
@@ -49,6 +53,9 @@
     &:hover {
         animation: gradient 4s ease-in-out infinite;
         //box-shadow: 0.05rem 0.05rem 0.4rem lightcoral;
+    }
+    @include tablet {
+        font-size: $font-ms;
     }
 }
 @keyframes gradient {

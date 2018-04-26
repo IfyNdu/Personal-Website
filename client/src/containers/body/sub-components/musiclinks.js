@@ -16,27 +16,24 @@ import store from '../../../store'
   @returns Brief about me section contained within parallax
  */
 
-const MusicSection = ({ handleHover, handleHoverOut, styles, isActive }) => {
+const MusicSection = ({ handleHover, handleHoverOut, isActive }) => {
 
     let music = Object.entries(DJ_MIX).map((item, index) => {
-        return <div className="musicWork"
+        return <div className="outLink"
             onMouseOver={() => handleHover(item[0])}
             onMouseLeave={handleHoverOut}
             onClick={() => window.open(item[1].link, "_blank")}>
-            <span>{item[1].title}</span> <FaAngleRight className={`section1__AngleRight ${isActive(item[0])}`} />
+            <span className="outlink__Title">{item[1].title}</span> <FaAngleRight className={`section1__AngleRight ${isActive(item[0])}`} />
         </div>
     })
     return (
-        <div className="parallax__MusicWork">
-            <div className="parallax__Container --musicwork"
-                style={styles}>
-            </div>
-            <p>Music</p>
-            <h3>Check out a few of my afro mixes<br />
-                more to come still...</h3>
-            <h4 className="musicWork__title">WATCH THIS SPACE</h4>
-            <div className="muicWork__container">
-                {music}
+        <div className="non__Parallax-Container --musicwork">
+            <div className="non__Parallax">
+                <p>Music</p>
+                <h3>Check out some of my mixes...</h3>
+                <div className="outlinks__Container --muicWork__container">
+                    {music}
+                </div>
             </div>
         </div>
     );

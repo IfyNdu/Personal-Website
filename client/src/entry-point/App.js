@@ -4,8 +4,10 @@ import { connect } from 'react-redux';
 //custom
 import NavigationBar from '../containers/navbar/navbar.component';
 import Body from '../containers/body/body.component';
+import Footer from '../containers/footer/footer.component';
 import Overlay from '../containers/overlay/overlay';
 import { vhTOpx } from '../utilities/convertVhtoPx'
+import 'intersection-observer'
 
 // redux
 import store from '../store'
@@ -14,10 +16,10 @@ import { setNavBarVisibility, setNavBarTransparency } from './App.actions'
 //magic
 import { VIEWPORT_HEIGHT_33 } from '../utilities/magicValues'
 
+
 class App extends Component {
   constructor(props) {
     super(props);
-
   };
 
   componentDidMount() {
@@ -53,6 +55,7 @@ class App extends Component {
       <div className="App">
         <NavigationBar />
         <Body />
+        <Footer />
         <Overlay />
       </div>
     );

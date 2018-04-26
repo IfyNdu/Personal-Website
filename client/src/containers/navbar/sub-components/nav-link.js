@@ -28,7 +28,7 @@ const NavLink = ({ href, title, isMenuOpen }) => {
                 }
             }}
             className={`navbar__Title ${isMenuOpen ? '--slideOut' : ''}`} >
-            <div >{title}</div>
+            <div>{title}</div>
         </Link>
     );
 }

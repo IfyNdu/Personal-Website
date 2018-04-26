@@ -12,7 +12,6 @@ export default (
   <HashRouter>
     <Switch>
       <Route exact path="/" component={ App } />
-      {/* <Route path="/yacht/:yachtName" component={ YachtDetail } /> */}
     </Switch>
   </HashRouter>
 )

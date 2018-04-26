@@ -38,22 +38,16 @@ class Body extends Component {
     componentDidMount = () => { }
 
     addScrollAnimation = (section, inView) => {
-        if (section !== 'contact') {
-            console.log(section, '\n', inView);
-            if (inView) {
-                let payload = {
-                    section: section,
-                    inView: inView
-                }
-                store.dispatch(animateH1(payload));
-            }
-            
-        } else if (section === 'contact') {
-
+        let payload = {
+            section: section,
+            inView: inView
+        }
+        if (inView) {
+            store.dispatch(animateH1(payload));
+        }
+        if (section === 'contact') {
             if (inView && this.props.videoPlayer) {
                 this.props.videoPlayer.target.playVideo();
-            } else if (inView && !this.props.videoPlayer) {
-                
             } else if (!inView && this.props.videoPlayer) {
                 this.props.videoPlayer.target.pauseVideo();
             }
@@ -62,6 +56,7 @@ class Body extends Component {
     }
 
     handleHover = (e) => {
+        console.log(e)
         store.dispatch(animateButton(e));
     }
     isActive = (name) => {
@@ -88,7 +83,6 @@ class Body extends Component {
         //     </Element>
         // })
 
-
         let aboutSection = <AboutSection handleHover={this.handleHover} isActive={this.isActive} handleHoverOut={this.handleHoverOut} />
 
         let bgImg = { backgroundImage: `url(${TITLE_SECTIONS.programmer.path})` };
@@ -103,31 +97,34 @@ class Body extends Component {
         let djSection = <DJSection styles={bgImg3} addScrollAnimation={this.addScrollAnimation} />
 
         let musicSection = <MusicSection handleHover={this.handleHover} isActive={this.isActive} handleHoverOut={this.handleHoverOut} />
-
-        let contactSection = <ContactSection addScrollAnimation={this.addScrollAnimation} />
+        
+        let contactSection = <ContactSection handleHover={this.handleHover} isActive={this.isActive} handleHoverOut={this.handleHoverOut} addScrollAnimation={this.addScrollAnimation} />
 
         return (
             <div className={`body__container`}>
                 <Element name={NAVIGATION_LINKS[0]}>
                     <Intro />
                 </Element>
-                <Element name=''>
+                <Element name='name'>
                     <Parallax children={nameSection} />
                 </Element>
                 <Element name={NAVIGATION_LINKS[1]} spy={true}>
-                    <Parallax children={aboutSection} />
+                    {/* <Parallax children={aboutSection} /> */}
+                    {aboutSection}
                 </Element>
                 <Element name=''>
                     <Parallax children={skillSection} />
                 </Element>
                 <Element name={NAVIGATION_LINKS[2]} spy={true}>
-                    <Parallax children={experienceSection} />
+                    {/* <Parallax children={experienceSection} /> */}
+                    {experienceSection}
                 </Element>
                 <Element name=''>
                     <Parallax children={djSection} />
                 </Element>
                 <Element name={NAVIGATION_LINKS[3]}>
-                    <Parallax children={musicSection} />
+                    {/* <Parallax children={musicSection} /> */}
+                    {musicSection}
                 </Element>
                 <Element name={NAVIGATION_LINKS[4]}>
                     <Parallax children={contactSection} />

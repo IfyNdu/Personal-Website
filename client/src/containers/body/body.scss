@@ -5,11 +5,13 @@
 }
 .parallax {
     position: relative;
-    height: 100vh;
+    height: auto;
     display: flex;
+    min-height: 100vh;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .intro__Container {
@@ -21,6 +23,7 @@
     justify-content: center;
     align-items: center;
     color: white;
+    background-color: $color-black-lighter;
 }
 .intro__Image {
     height: 100%;
@@ -54,7 +57,7 @@
     width: 100%;
     height: 100%;
     transition: background-color 0.3s linear;
-    background-color: lighten(black, 10%);
+    background-color: $color-black-lighter;
 
     &.--show-image {
         // animation: mask-on 0.3s linear;
@@ -63,7 +66,7 @@
         transition: background-color 0.3s linear;
     }
 }
-.row1, .row2, .row3{
+.row1, .row2, .row3 {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -77,25 +80,43 @@
         flex-shrink: 0;
         margin: auto 0;
         transition: color 0.5s ease-out, transform 0.3s ease-in-out;
+        letter-spacing: 0.5rem;
 
         &:hover {
             color: $color-blue-light;
             transition: color 0.5s ease-out, transform 0.3s ease-in-out;
             transform: scale(1.1);
         }
+
+        @include tablet {
+            font-size: $font-mxxl;
+        }
+        @include mobile {
+            // font-size: 200%;
+        }
     
     }
+    
     
     h2 {
         cursor: crosshair;
         flex-grow: 0;
         flex-shrink: 0;
         margin: auto 0;
+        font-weight: 300;
+        font-style: italic;
         transition: color 0.5s ease-out, transform 0.3s ease-in-out;
         &:hover {
             color: $color-blue-light;
             transition: color 0.5s ease-out, transform 0.3s ease-in-out;
             transform: scale(1.1);
+        }
+
+        @include tablet {
+            font-size: $font-mxl;
+        }
+        @include mobile {
+            // font-size: 150%;
         }
 
     }
@@ -115,63 +136,111 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2rem;
+    margin: 0 2rem;
 
     span {
         height: 4px;
-        width: 80%;
-        min-width: 50px;
+        padding: 0 2rem;
         border-radius: 2px;
         background: white;
+        transition: padding 0.5s ease;
+        @include tablet {
+            padding: 0 1.5rem;
+        }
+        @include tablet {
+            padding: 0 0.8rem;
+        }
+    }
+
+    
+}
+.non__Parallax-Container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    
+    &.--about {
+        background-color: $color-blue-light;
+    }
+    &.--experience {
+        background-color: #008080;
+    }
+    &.--musicwork {
+        background-color: #094540;
     }
 }
-
-.parallax__About, .parallax__Experience {
+.non__Parallax {
     display: flex;
     flex-flow: column nowrap;
-    padding: 0 2rem;
+    margin: 4rem 2rem;
     color: white;
+    align-items: center;
 
-    p {
+    p:first-child {
         text-transform: uppercase;
         letter-spacing: 0.3rem;
         text-align: justify;
         z-index: 1;
+        color: black;
+
+        @include tablet {
+            font-size: $font-ms;
+        }
     }
     h3 {
-        text-align: left;
+        text-align: center;
         z-index: 1;
+        font-weight: 300;
+        @include tablet {
+            font-size: $font-ml;
+        }
+   
     }
-    span {
-        text-align: justify;
-        z-index: 1;
+    h4 {
+        text-align: center;
+
+        @include tablet {
+            font-size: $font-mm;
+        }
     }
 }
+
+
 .parallax__Name, .parallax__Skill, .parallax__Music, .parallax__MusicWork, .parallax__ContactMe {
     display: flex;
     flex-flow: column nowrap;
-    padding: 0 2rem;
+    margin: 2rem;
     color: white;
-    
+
     h1 {
-        background-color: $color-black-light;
         padding: 1rem;
         text-align: center;
         z-index: 1;
         opacity: 0;
-        transform: translateY(calc((100vh - 100%) / 2 + 100%));
+        transform: translateX(calc((100vw - 100%) / 2 - 100%));
 
         &.animate {
-            transform: translateY(0);
+            transform: translateX(0);
             opacity: 1.0;
-            transition: opacity 2.5s ease, transform 2s ease;
+            transition: opacity 2.5s ease, transform 1.5s ease;
         }
 
         @include desktop {
-            font-size: 300%;
+            // font-size: 300%;
         }
         @include tablet {
-            font-size: 250%;
+            // font-size: 200%;
+        }
+    }
+
+    h3 {
+        @include tablet {
+            // font-size: 150%;
+        }
+    }
+    h4 {
+        @include tablet {
+            // font-size: 130%;
         }
     }
 }
@@ -182,10 +251,10 @@
         width: 75%;
     }
     @include tablet {
-        width: 85%;
+        width: 80%;
     }
     @include mobile {
-        width: 100%;
+        width: 95%;
     }
 
 }
@@ -199,24 +268,31 @@
     top: 0;
     width: 100%;
     height: 100%;
+    min-height: 100%;
     z-index: -1;
+    transform: translateZ(0);
 
-    &.--experience {
-        background-color: #008080;
+    &.--skill {
+        filter: opacity(0.8);
+        transform: scale(1.01);
     }
-    &.--about {
-        background-color: $color-blue-light;
+    &.--name {
+        filter: opacity(0.9) grayscale(100%);
+        transform: scale(1.01);
     }
-    &.--musicwork {
-        background-color: #094540;
-    }
-    &.--skill, &.--name, &.--music {
-        filter: opacity(0.5) blur(3px);
+    &.--music {
+        filter: opacity(0.8) grayscale(10%);
+        transform: scale(1.01);
     }
     &.--contactMe {
-        background-color: black;
-        filter: opacity(0.7) blur(4px);
+        filter: opacity(0.7) blur(4px) ;
+        transform: scale(1.01);
     }
+
+    @include desktop {
+        background-attachment: scroll;
+    }
+
 }
 .section1__AngleRight {
     fill: white;
@@ -229,77 +305,111 @@
         fill: $color-red-light;
     }
 }
-.socialMedia__container {
+
+.outLink  {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 0 0 0;
+
+}
+.outlinks__Container {
     text-align: justify;
     margin-right: auto;
     display: flex;
     flex-flow: column nowrap;
-}
-.socialMedia {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
 
-    span {
-        width: 8rem;
+    &.--linkedin__Container {
+        margin-top: 2.5rem;
     }
-    &.--fb {
-        margin-bottom: 0.5rem;
-    }
-}
-.muicWork__container {
-    text-align: justify;
-    margin-right: auto;
-    display: flex;
-    flex-flow: column nowrap;
-}
-.musicWork {
-    cursor: pointer;
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
+    &.--vidcredit__Container {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 1rem 1rem 0.5rem 0;
 
-    span {
-        width: 8rem;
+        .outlink__Title {
+            color: $color-blue-light;
+        }
+        @include tablet {
+            .outlink__Title {
+                width: auto;
+            }
+            .section1__AngleRight {
+                display: none;
+            }
+        }
     }
 }
+
 .experience__Tools {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row wrap;
+    justify-content: center;
     cursor: crosshair;
-    justify-content: space-around;
     
+    .tools:last-of-type {
+        .tools__Bar {
+            display: none;
+        }
+    }
+
     .tools__Bar {
         height: 8px;
         width: 8px;
         border-radius: 8px;
         background: white;
-        margin-right: 0.8rem;
+        margin-left: 0.8rem;
+
+        @include tablet {
+            display: none;
+        }
     }
 
 }
 .tools {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row-reverse nowrap;
     justify-content: flex-start;
     align-items: center;
+    margin-right: 0.8rem;
+
 }
 .tools__subHeading {
-    margin: 0 0 1rem 0;
-    font-weight: 400;
+    margin-bottom: 2rem;
+    @include tablet {
+        font-size: $font-ms;
+    }
 }
 .musicWork__title {
     margin-top: 0;
+    color: $color-red-light;
+
 }
 .tools__Title {
-    font-weight: 200;
+    font-weight: 300;
+    font-style: italic;
+    @include tablet {
+        font-size: $font-ms;
+    }
+}
+.outlink__Title {
+    text-align: justify;
+    z-index: 1;
+    width: 8rem;
+    font-weight: 300;
+    font-style: italic;
+
+    @include tablet {
+        font-size: $font-ms;
+    }
 }
 .contactMe__legend {
     padding: 0 1rem;
 
     h3 {
-        @include mobile {
-            font-size: 150%;
+        @include tablet {
+            font-size: $font-ml;
         }
     }
    

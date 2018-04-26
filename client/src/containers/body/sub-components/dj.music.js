@@ -13,14 +13,14 @@ import { connect } from 'react-redux';
   @returns My Dj skills contained within parallax
  */
 
-const DJSection = ({ styles, addScrollAnimation, hobbyParallax }) => {
+const DJSection = ({ styles, addScrollAnimation, craftParallax }) => {
     return (
         <div className="parallax__Music">
             <div className="parallax__Container --music"
                 style={styles}>
             </div>
             <Observer onChange={inView => addScrollAnimation(NAVIGATION_LINKS[3], inView)}>
-                <h1 className={hobbyParallax}>I also do some Djing...</h1>
+                <h1 className={craftParallax}>I also do some Djing...</h1>
             </Observer>
         </div>
     );
@@ -30,7 +30,7 @@ DJSection.propTypes = {
 };
 const storeToProps = (store) => {
     return {
-        hobbyParallax: store.bodyReducer.hobbyParallax
+        craftParallax: store.bodyReducer.craftParallax
     }
 }
 export default connect(storeToProps)(DJSection);

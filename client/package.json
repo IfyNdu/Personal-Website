@@ -1,16 +1,17 @@
 {
-  "name": "personal",
+  "name": "iffy-cv",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "aws-sdk": "^2.224.1",
     "axios": "^0.18.0",
+    "intersection-observer": "^0.5.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-icons": "^2.2.7",
     "react-intersection-observer": "^3.0.3",
     "react-redux": "^5.0.7",
-    "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
     "react-scroll": "^1.7.8",
     "react-youtube": "^7.5.0",
@@ -22,7 +23,7 @@
     "sass:prep": "npm run sass:build && npm run sass:watch",
     "sass:build": "node-sass src/styles/scss/index.scss -o src/styles/css",
     "sass:watch": "node-sass --watch src/styles/scss/index.scss -o src/styles/css",
-    "build": "react-scripts build",
+    "build": "react-scripts build && aws s3 sync build/ s3://www.ifyndu.com",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

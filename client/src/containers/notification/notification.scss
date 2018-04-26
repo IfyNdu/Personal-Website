@@ -9,13 +9,24 @@
     background: linear-gradient(45deg, $color-blue-light,$color-teal-light);
     color: white;
     border-left: 4px solid rgb(4, 248, 4);
-    width: calc(100vw * 0.15);
-    height: calc(100vh * 0.05);
+    width: 300px;
+    height: 50px;
     
+    @include mobile {
+        width: 100%;
+        margin: 0;
+        height: 80px;
+        border-left: none;
+        transform: translateY(100%)
+    }
+
     &.popUp {
         display: flex;
-        animation: show-notification 3.5s ease-in;
-        animation-fill-mode: forwards;
+        @include notification(show-notification);
+
+        @include mobile {
+            @include notification(show-notification-mobile);
+        }
     }
 }
 
@@ -24,3 +35,10 @@
     70% {opacity: 1;}
     100% { bottom: 80%; opacity: 0;}
 }
+
+@keyframes show-notification-mobile {
+    0% { transform: translateY(100%)}
+    50% {transform: translateY(0%)}
+    100% { transform: translateY(100%)}
+}
+

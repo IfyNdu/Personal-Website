@@ -19,7 +19,7 @@ export const TITLE_SECTIONS = {
     },
     gym: {
         path: gymIMG,
-        name: 'gym'   
+        name: 'gym'
     },
     music: {
         path: djIMG,
@@ -42,6 +42,16 @@ export const DJ_MIX = {
         link: '//www.soundcloud.com/dj-flames-4/sound-check-azonto-funkyhouse',
         title: 'Afro Fusion'
     },
+}
+export const VID_CREDIT = {
+    name: 'ify_shadow',
+    link: '//www.instagram.com/mista_skee/',
+    title: 'video cred-lit'
+}
+export const LINKEDIN = {
+    name: 'linkedin',
+    link: '//www.linkedin.com/in/ifeanyi-ndu-07361988/',
+    title: 'LinkedIn'
 }
 export const SOCIALS = {
     facebook: {

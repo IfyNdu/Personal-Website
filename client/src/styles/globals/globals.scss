@@ -1,34 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,700');
+
+
 $color-black-light: lighten(black, 30%);
+$color-black-lighter: lighten(black, 10%);
 $color-blue-light: lighten(blue, 20%);
 $color-red-light: lighten(red, 20%);
 $color-teal-light: lighten(#094540, 20%);
 
+
+$notification-animation-duration: 3.5s;
+
+//Responsive ish
 $mobile: 425px;
 $tablet: 768px;
 $desktop: 1024px;
 $desktop-large: 1600px;
-
 $aspetRatio16-9: 56.25%;
 $aspetRatio4-3: 75%;
 
-//scaling perfect fourth
+//scaling Augmented fourth
 //https://type-scale.com/
 
-$font-xxl: 3.998rem;
-$font-xl: 2.827rem;
-$font-l: 1.999rem;
-$font-m: 1.414rem;
-$font-s: 1rem;
-$font-xs: 0.707rem;
+$font-xxl: 3.998em;
+$font-xl: 2.827em;
+$font-l: 1.999em;
+$font-m: 1.414em;
+$font-s: 1em;
+$font-xs: 0.707em;
+
+//scaling major third
+
+$font-mxxl: 2.441em;
+$font-mxl: 1.953em;
+$font-ml: 1.563em;;
+$font-mm: 1.25em;
+$font-ms: 0.8em;
+$font-mxs: 0.6em;
 
 h1 {font-size: $font-xxl }
 h2 {font-size: $font-xl }
 h3 {font-size: $font-l }
 h4 {font-size: $font-m }
-p {font-size: $font-s }
 p.xs {font-size: $font-xs }
-label {font-size: 1rem;}
-button {font-size: 1rem;}
+p, span, label, button, input, textarea {font-size: $font-s;}
+
 
 @mixin mobile {
     @media (max-width: $mobile) {
@@ -50,3 +65,10 @@ button {font-size: 1rem;}
         @content;
     }
 }
+
+// component based mixins
+
+@mixin notification($animation) {
+    animation: $animation $notification-animation-duration ease-in;
+    animation-fill-mode: forwards;
+} 

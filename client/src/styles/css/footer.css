@@ -1,0 +1,8 @@
+.Footer__container {
+  background: red;
+  text-align: center; }
+
+.Footer__copyright {
+  background: blue;
+  display: inline-block;
+  margin: 2rem auto; }

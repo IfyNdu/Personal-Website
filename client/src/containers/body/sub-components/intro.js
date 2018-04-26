@@ -83,7 +83,7 @@ class Intro extends Component {
                         </div>
                         <h2 onMouseOver={this.handleHover}
                             onMouseLeave={this.handleMouseLeave}
-                            id={TITLE_SECTIONS.music.name}>music lover</h2>
+                            id={TITLE_SECTIONS.music.name}>music ...</h2>
                     </div>
                 </div>
                 <div className={`intro__Mask --${this.state.animate}`}></div>

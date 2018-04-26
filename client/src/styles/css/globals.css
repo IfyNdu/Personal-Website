@@ -1,23 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,700");
 h1 {
-  font-size: 3.998rem; }
+  font-size: 3.998em; }
 
 h2 {
-  font-size: 2.827rem; }
+  font-size: 2.827em; }
 
 h3 {
-  font-size: 1.999rem; }
+  font-size: 1.999em; }
 
 h4 {
-  font-size: 1.414rem; }
-
-p {
-  font-size: 1rem; }
+  font-size: 1.414em; }
 
 p.xs {
-  font-size: 0.707rem; }
+  font-size: 0.707em; }
 
-label {
-  font-size: 1rem; }
-
-button {
-  font-size: 1rem; }
+p, span, label, button, input, textarea {
+  font-size: 1em; }

@@ -12,8 +12,8 @@ import store from '../../../store'
   @returns Brief about me section contained within parallax
  */
 
-const ExperienceSection = ({ styles }) => {
-    let tools = ["React", "Redux", "Node", "Sass", "Javascript", "Enzyme", "Jest", "Swift"]
+const ExperienceSection = () => {
+    let tools = ["React", "Redux", "Node", "Sass", "Enzyme", "Jest", "Swift"]
         .map((item, index) => {
             return <div className={`tools ${item}--${index}`} >
                 <span className="tools__Bar"></span>
@@ -21,16 +21,15 @@ const ExperienceSection = ({ styles }) => {
             </div>
         })
     return (
-        <div className="parallax__Experience">
-            <div className="parallax__Container --experience"
-                style={styles}>
-            </div>
-            <p>Software Engineer</p>
-            <h3>From client to server<br />
-                I get involved in it all...</h3>
-            <h4 className="tools__subHeading">Preferred tools of choice includes but not limited to</h4>
-            <div className="experience__Tools">
-                {tools}
+        
+        <div className="non__Parallax-Container --experience">
+            <div className="non__Parallax">
+                <p>Software Engineer</p>
+                <h3>Client or Server I get involved in it all...</h3>
+                <p className="tools__subHeading">Preferred tools of choice includes but not limited to</p>
+                <div className="experience__Tools">
+                    {tools}
+                </div>
             </div>
         </div>
     );
