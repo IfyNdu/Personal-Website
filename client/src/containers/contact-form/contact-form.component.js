@@ -5,10 +5,8 @@ import React, { Component } from 'react';
 import FormInput from '../../generics/form-elements/input';
 import { formReady } from '../../utilities/validators';
 import { model } from './contact-form.model';
-import { apiDomain } from '../../config'
 
 // API
-import * as API from './contact-form.api'
 import { sendMail } from '../../services/email-service'
 
 // redux
@@ -39,7 +37,7 @@ class ContactMeFrom extends Component {
         let value = e.target.value;
         let name = e.target.name;
         let fieldIsValid = this.state.model[name].validator(value);
-        
+
         this.setState({
             isValid: fieldIsValid,
             formValid: formReady(model, this.state.fields),

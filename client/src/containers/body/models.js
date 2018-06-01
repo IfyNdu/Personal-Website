@@ -1,4 +1,4 @@
-import mainIMG from '../../assets/img/IMG_3636.jpg'
+import mainIMG from '../../assets/img/temp-pic.jpeg'
 import programmerIMG from '../../assets/img/programmer.png'
 import softEngrIMG from '../../assets/img/soft-engr.jpg'
 import gymIMG from '../../assets/img/gym.jpg'
@@ -46,7 +46,7 @@ export const DJ_MIX = {
 export const VID_CREDIT = {
     name: 'ify_shadow',
     link: '//www.instagram.com/mista_skee/',
-    title: 'video cred-lit'
+    title: 'video credit'
 }
 export const LINKEDIN = {
     name: 'linkedin',

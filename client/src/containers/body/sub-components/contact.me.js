@@ -31,15 +31,13 @@ const ContactMeSection = ({ styles, addScrollAnimation, contactParallax, handleH
             rel: 0
         }
     };
-    const remi = {
-
-    }
+   
     return (
         <div className="parallax__ContactMe">
             <Observer
                 onChange={inView => addScrollAnimation(NAVIGATION_LINKS[4], inView)}>
                 <YouTube
-                    videoId="wamL0A9Qzxg"
+                    videoId="0kphctksyS"
                     className="parallax__Container --contactMe"
                     opts={opts}
                     onReady={(e) => {
@@ -65,8 +63,6 @@ const ContactMeSection = ({ styles, addScrollAnimation, contactParallax, handleH
             </div>
             <div className="outlinks__Container --vidcredit__Container">
                 <div className={`outLink --${VID_CREDIT.name}`}
-                    // onMouseOver={() => handleHover(VID_CREDIT.name)}
-                    // onMouseLeave={handleHoverOut}
                     onClick={() => window.open(VID_CREDIT.link, "_blank")}>
                     <span className="outlink__Title">{VID_CREDIT.title}</span>
                     <FaAngleRight
@@ -75,6 +71,7 @@ const ContactMeSection = ({ styles, addScrollAnimation, contactParallax, handleH
             </div>
         </div>
     );
+    
 }
 
 ContactMeSection.propTypes = {

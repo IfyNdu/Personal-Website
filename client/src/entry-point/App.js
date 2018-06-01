@@ -18,9 +18,6 @@ import { VIEWPORT_HEIGHT_33 } from '../utilities/magicValues'
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  };
 
   componentDidMount() {
     let previousScrollPosition = window.scrollY || window.pageYOffset ||

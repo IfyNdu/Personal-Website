@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "autoprefixer": "7.1.6",
-    "aws-sdk": "^2.224.1",
+    "aws-sdk": "^2.229.1",
     "axios": "^0.18.0",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
@@ -29,21 +29,22 @@
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
     "intersection-observer": "^0.5.0",
-    "jest": "20.0.4",
+    "jest": "22.4.3",
+    "jsdom": "^11.9.0",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
     "promise": "8.0.1",
     "prop-types": "^15.6.1",
     "raf": "3.4.0",
-    "react": "^16.3.1",
-    "react-dev-utils": "^5.0.0",
-    "react-dom": "^16.3.1",
+    "react": "^16.3.2",
+    "react-dev-utils": "^5.0.1",
+    "react-dom": "^16.3.2",
     "react-icons": "^2.2.7",
     "react-intersection-observer": "^3.0.3",
     "react-redux": "^5.0.7",
-    "react-scroll": "^1.7.8",
-    "react-youtube": "^7.5.0",
+    "react-scroll": "^1.7.9",
+    "react-youtube": "^7.6.0",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "style-loader": "0.19.0",
@@ -60,13 +61,14 @@
     "sass:build": "node-sass src/styles/scss/index.scss -o src/styles/css",
     "sass:watch": "node-sass --watch src/styles/scss/index.scss -o src/styles/css",
     "build": "node scripts/build.js && aws s3 sync build/ s3://www.ifyndu.com",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "jest"
   },
   "devDependencies": {
     "concurrently": "^3.5.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "node-sass": "^4.8.3"
+    "jest-cli": "^22.4.3",
+    "node-sass": "^4.9.0"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -100,7 +102,10 @@
       "web.jsx",
       "jsx",
       "node"
-    ]
+    ],
+    "globals": {
+      
+    }
   },
   "babel": {
     "presets": [

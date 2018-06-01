@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Element } from 'react-scroll'
 import { findDOMNode } from 'react-dom'
 
 // custom
@@ -56,7 +56,6 @@ class Body extends Component {
     }
 
     handleHover = (e) => {
-        console.log(e)
         store.dispatch(animateButton(e));
     }
     isActive = (name) => {
@@ -97,7 +96,7 @@ class Body extends Component {
         let djSection = <DJSection styles={bgImg3} addScrollAnimation={this.addScrollAnimation} />
 
         let musicSection = <MusicSection handleHover={this.handleHover} isActive={this.isActive} handleHoverOut={this.handleHoverOut} />
-        
+
         let contactSection = <ContactSection handleHover={this.handleHover} isActive={this.isActive} handleHoverOut={this.handleHoverOut} addScrollAnimation={this.addScrollAnimation} />
 
         return (

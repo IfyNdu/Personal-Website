@@ -1,5 +1,3 @@
-import { isNull } from "util";
-
 const initialState = {
     animateButton: null,
     videoPlayerState: null,
