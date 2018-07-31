@@ -39,7 +39,7 @@ const ContactMeSection = ({ styles, addScrollAnimation, contactParallax, handleH
             <Observer
                 onChange={inView => addScrollAnimation(NAVIGATION_LINKS[4], inView)}>
                 <YouTube
-                    videoId="wamL0A9Qzxg"
+                    videoId="wamL0A9Qzx"
                     className="parallax__Container --contactMe"
                     opts={opts}
                     onReady={(e) => {

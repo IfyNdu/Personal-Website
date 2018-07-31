@@ -5,7 +5,6 @@ import FaAngleRight from 'react-icons/lib/fa/angle-right';
 //redux 
 
 import { connect } from 'react-redux';
-import store from '../../../store'
 
 //socials model
 

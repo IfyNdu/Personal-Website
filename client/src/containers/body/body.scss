@@ -328,9 +328,6 @@
         right: 0;
         padding: 1rem 1rem 0.5rem 0;
 
-        .outlink__Title {
-            color: $color-blue-light;
-        }
         @include tablet {
             .outlink__Title {
                 width: auto;

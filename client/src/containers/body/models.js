@@ -1,8 +1,8 @@
-import mainIMG from '../../assets/img/IMG_3636.jpg'
+import mainIMG from '../../assets/img/main_pic3.jpeg'
 import programmerIMG from '../../assets/img/programmer.png'
-import softEngrIMG from '../../assets/img/soft-engr.jpg'
+import softEngrIMG from '../../assets/img/soft-engr.jpeg'
 import gymIMG from '../../assets/img/gym.jpg'
-import djIMG from '../../assets/img/dj-deck.jpeg'
+import djIMG from '../../assets/img/dj-deck2.jpeg'
 
 export const TITLE_SECTIONS = {
     name: {

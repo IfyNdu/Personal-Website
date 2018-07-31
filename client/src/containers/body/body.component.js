@@ -35,7 +35,7 @@ class Body extends Component {
         this.handleHoverOut = this.handleHoverOut.bind(this);
     };
 
-    componentDidMount = () => { }
+    componentDidMount = () => {}
 
     addScrollAnimation = (section, inView) => {
         let payload = {
@@ -56,7 +56,6 @@ class Body extends Component {
     }
 
     handleHover = (e) => {
-        console.log(e)
         store.dispatch(animateButton(e));
     }
     isActive = (name) => {

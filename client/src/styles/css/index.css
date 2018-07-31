@@ -20,7 +20,9 @@ p, span, label, button, input, textarea {
 * {
   font-family: Merriweather, "Trebuchet MS", Arial, sans-serif;
   box-sizing: border-box;
-  text-decoration: none; }
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 body {
   margin: 0;
@@ -375,8 +377,6 @@ body {
     bottom: 0;
     right: 0;
     padding: 1rem 1rem 0.5rem 0; }
-    .outlinks__Container.--vidcredit__Container .outlink__Title {
-      color: #6666ff; }
     @media (max-width: 768px) {
       .outlinks__Container.--vidcredit__Container .outlink__Title {
         width: auto; }

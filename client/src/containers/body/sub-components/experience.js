@@ -13,7 +13,7 @@ import store from '../../../store'
  */
 
 const ExperienceSection = () => {
-    let tools = ["React", "Redux", "Node", "Sass", "Enzyme", "Jest", "Swift"]
+    let tools = ["React", "Redux", "Node", "Sass", "Enzyme", "Jest", "Swift", "AWS"]
         .map((item, index) => {
             return <div className={`tools ${item}--${index}`} >
                 <span className="tools__Bar"></span>
